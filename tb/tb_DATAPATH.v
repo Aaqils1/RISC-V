@@ -29,6 +29,14 @@ module tb_DATAPATH;
     wire [31:0] dbg_t0, dbg_t1, dbg_t2;
     wire        dbg_micro_running, dbg_micro_done;
 
+    // In your tb_DATAPATH, add to the port connections:
+    
+    
+    // And declare the wires:
+    wire dbg_raw_hazard, dbg_load_use, dbg_forward_a, dbg_forward_b;
+    wire dbg_power_gate_if, dbg_if_ex_clk_en;
+
+
     DATAPATH dut (
         .clk              (clk),
         .reset            (reset),
@@ -42,7 +50,13 @@ module tb_DATAPATH;
         .dbg_sop          (dbg_sop),
         .dbg_t0           (dbg_t0),  .dbg_t1  (dbg_t1),  .dbg_t2  (dbg_t2),
         .dbg_micro_running(dbg_micro_running),
-        .dbg_micro_done   (dbg_micro_done)
+        .dbg_micro_done   (dbg_micro_done),
+        .dbg_raw_hazard    (dbg_raw_hazard),
+        .dbg_load_use      (dbg_load_use),
+        .dbg_forward_a     (dbg_forward_a),
+        .dbg_forward_b     (dbg_forward_b),
+        .dbg_power_gate_if (dbg_power_gate_if),
+        .dbg_if_ex_clk_en  (dbg_if_ex_clk_en)
     );
 
     initial clk = 0;
