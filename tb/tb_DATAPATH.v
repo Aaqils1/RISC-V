@@ -120,10 +120,10 @@ module tb_DATAPATH;
 
         $display("");
         $display("=======================================================");
-        $display(" SOP  5*5 + 10*4 + 24*6 + 7*8 = 25 + 40 + 144 + 56 = 265");
+        $display(" SOP  1*2 + 3*4 + 5*6 + 7*8 = 2 + 12 + 30 + 56 = 100");
         $display("=======================================================");
         $display("  x31 (SOP) = %0d  (expected 100)", dbg_sop);
-        if (dbg_sop === 32'd265) begin
+        if (dbg_sop === 32'd100) begin
             $display("  >> SOP PASS"); pass_count = pass_count + 1;
         end else begin
             $display("  >> SOP FAIL"); fail_count = fail_count + 1;
